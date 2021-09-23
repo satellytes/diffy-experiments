@@ -1,0 +1,13 @@
+{
+  "name": "diff-experiment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "diff2html": "^3.4.11",
+    "parcel-bundler": "^1.12.5"
+  }
+}
