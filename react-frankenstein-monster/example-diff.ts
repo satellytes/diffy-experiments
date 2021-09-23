@@ -1,11 +1,6 @@
-console.log('works1')
-import {parse} from "diff2html/bundles/js/diff2html.min"
+//export is easier then reading text files with ts or webpack
 
-import comments from './comments-github-lightweight.json'
-console.log(comments);
-
-// copied from https://github.com/georgiee/temporary-comment-api/pull/2.diff
-const patchDiff = `
+export const PATCH_DIFF = `
 diff --git a/my.css b/my.css
 index 49fc55a..0453b35 100644
 --- a/my.css
@@ -53,5 +48,3 @@ index 49fc55a..0453b35 100644
 +  outline: 20px solid red !important;
 +}
 `
-const result = parse(patchDiff);
-console.log(result)

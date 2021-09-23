@@ -1,0 +1,25 @@
+{
+  "name": "diff-experiment",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "antd": "^4.16.13",
+    "diff2html": "^3.4.11",
+    "gitdiff-parser": "^0.2.2",
+    "nanoid": "^3.1.28",
+    "parcel-bundler": "^1.12.5",
+    "prop-types": "^15.7.2",
+    "react": ">=16.9.0",
+    "react-diff-view": "^2.4.8",
+    "react-dom": ">=16.9.0",
+    "react-is": ">= 16.8.0",
+    "styled-components": "^5.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  }
+}
