@@ -54,6 +54,11 @@ Anyway here is what I know about vue and this works pretty good:
 
 ```
 npx @vue/cli create --default vue-diffy
+
+cd vue-diffy
+yarn add @vue/cli
+yarn vue add typescript
+yarn serve
 ```
 
 # Lost & Found
