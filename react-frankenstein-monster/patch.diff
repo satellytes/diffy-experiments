@@ -1,5 +1,10 @@
+diff --git a/my.css b/my.css
+index 49fc55a..0453b35 100644
+--- a/my.css
++++ b/my.css
+@@ -1,6 +1,10 @@
 +html {
-+  font-size: 16px;
++  font-size: 16px; 
 +}
 +
 +// magic number
@@ -8,12 +13,12 @@
 -  font-size:  12px;
 +  background: #123456;
  }
-
+ 
  * {
 @@ -16,10 +20,23 @@ body {
    outline: 2px solid green;
  }
-
+ 
 -.paragraph {
 -  font-size:  16px;
 +// issue1: nesting
@@ -26,7 +31,7 @@
 +    }
 +  }
  }
-
+ 
 -.layout {
 +// over specifiy, creates the same issues as nesting actually
 +body .product .product-image .layout {
