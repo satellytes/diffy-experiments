@@ -4,6 +4,8 @@ A repository where we tinker around with diffs.
 2. Provide a way to author comments
 3. Provide a simple role model to display comments only to specific users
 
+Read the [Notion Docs](https://www.notion.so/satellytes/Codename-Diffy-ef969ac1cf0c428087b7936f744e2609) for more insights about the plan 
+
 ---
 
 # Experiments
