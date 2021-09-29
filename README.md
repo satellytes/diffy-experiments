@@ -45,6 +45,17 @@ for the markdown editor in `note_form` through (vue_shared/components/markdown/f
 
 -> The vue base brings vue into this experiment. I think it's a good match and in addition to the frankenstein project based on react and the existing technical base in shape of `react-diff-view` we might be able to use the diff parser that project uses ([Diff Parser](https://github.com/ecomfe/gitdiff-parser)) to create our own minimal project to display the diff and the comments. I like the react project and the architecture but we should give us some more time to tinker around with the foundation of the diff format and doing it yourself is the best way to do that. WE can decide later on in which direction we want to head
 
+# Experiment 2: Vue
+It's a pain in the ass to start projects these days and if you are not experienced you need to be lucky
+to know the CLI (if any) or decide for webpack, parcel, snowpack etc. Mostly gone are the days that you can create an `index.html`
+and start creating some code (even though there are projects who want to achieve this: deno, pika)
+
+Anyway here is what I know about vue and this works pretty good:
+
+```
+npx @vue/cli create --default vue-diffy
+```
+
 # Lost & Found
 Some stuff I needed to fetch data from github or whatever comes.
 
