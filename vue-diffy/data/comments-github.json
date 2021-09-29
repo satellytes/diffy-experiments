@@ -1,0 +1,442 @@
+[
+  {
+    "url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/714723122",
+    "pull_request_review_id": 761918984,
+    "id": 714723122,
+    "node_id": "PRRC_kwDOGGiYm84qmc8y",
+    "diff_hunk": "@@ -16,10 +20,23 @@ body {\n   outline: 2px solid green;\n }\n \n-.paragraph {\n-  font-size:  16px;\n+// issue1: nesting\n+body {\n+  .product {\n+    .product-imag {\n+      .paragraph {\n+        font-size:  1rem;\n+      }\n+    }\n+  }",
+    "path": "my.css",
+    "position": 27,
+    "original_position": 27,
+    "commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "original_commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "user": {
+      "login": "georgiee",
+      "id": 1701755,
+      "node_id": "MDQ6VXNlcjE3MDE3NTU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1701755?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/georgiee",
+      "html_url": "https://github.com/georgiee",
+      "followers_url": "https://api.github.com/users/georgiee/followers",
+      "following_url": "https://api.github.com/users/georgiee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/georgiee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/georgiee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/georgiee/subscriptions",
+      "organizations_url": "https://api.github.com/users/georgiee/orgs",
+      "repos_url": "https://api.github.com/users/georgiee/repos",
+      "events_url": "https://api.github.com/users/georgiee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/georgiee/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "A nifty set of problems coming from this innocent idea of organizing the content in neat blocks of css.\r\n\r\n**Problem 1: (DOM mirroring)**\r\nThis is exactly replicating the DOM structure which makes the CSS very dependent of the markup\r\nwhich will cause trouble in the future.\r\n\r\n**Problem 2: (Too much nesting)**\r\nThis is nesting for no reason, the flat version would work too\r\nwhich would also prevent the high cognitive load on the reader's mind\r\nwho constantly need to resolve the full and normalized selector\r\n\r\n**Problem 3: (over-specificity)**\r\nBy using such a deep nesting it's also over specifying the target for no reason. A simple .header-link ",
+    "created_at": "2021-09-23T11:58:35Z",
+    "updated_at": "2021-09-23T11:58:35Z",
+    "html_url": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r714723122",
+    "pull_request_url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2",
+    "author_association": "OWNER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/714723122"
+      },
+      "html": {
+        "href": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r714723122"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2"
+      }
+    },
+    "start_line": 24,
+    "original_start_line": 24,
+    "start_side": "RIGHT",
+    "line": 31,
+    "original_line": 31,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/714724230",
+    "pull_request_review_id": 761920501,
+    "id": 714724230,
+    "node_id": "PRRC_kwDOGGiYm84qmdOG",
+    "diff_hunk": "@@ -16,10 +20,23 @@ body {\n   outline: 2px solid green;\n }\n \n-.paragraph {\n-  font-size:  16px;\n+// issue1: nesting\n+body {\n+  .product {\n+    .product-imag {\n+      .paragraph {\n+        font-size:  1rem;\n+      }\n+    }\n+  }\n }\n \n-.layout {\n+// over specifiy, creates the same issues as nesting actually\n+body .product .product-image .layout {",
+    "path": "my.css",
+    "position": 32,
+    "original_position": 32,
+    "commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "original_commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "user": {
+      "login": "georgiee",
+      "id": 1701755,
+      "node_id": "MDQ6VXNlcjE3MDE3NTU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1701755?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/georgiee",
+      "html_url": "https://github.com/georgiee",
+      "followers_url": "https://api.github.com/users/georgiee/followers",
+      "following_url": "https://api.github.com/users/georgiee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/georgiee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/georgiee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/georgiee/subscriptions",
+      "organizations_url": "https://api.github.com/users/georgiee/orgs",
+      "repos_url": "https://api.github.com/users/georgiee/repos",
+      "events_url": "https://api.github.com/users/georgiee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/georgiee/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This is actually very related to nesting selector. Such a over-specificity creates a binding to the DOM and it's creating a css statement with a specificity being too high `0 - 4 - 1` (4x class, 1 element)",
+    "created_at": "2021-09-23T12:00:12Z",
+    "updated_at": "2021-09-23T12:00:13Z",
+    "html_url": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r714724230",
+    "pull_request_url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2",
+    "author_association": "OWNER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/714724230"
+      },
+      "html": {
+        "href": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r714724230"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 35,
+    "original_line": 35,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/714725476",
+    "pull_request_review_id": 761922252,
+    "id": 714725476,
+    "node_id": "PRRC_kwDOGGiYm84qmdhk",
+    "diff_hunk": "@@ -16,10 +20,23 @@ body {\n   outline: 2px solid green;\n }\n \n-.paragraph {\n-  font-size:  16px;\n+// issue1: nesting\n+body {\n+  .product {\n+    .product-imag {\n+      .paragraph {\n+        font-size:  1rem;\n+      }\n+    }\n+  }\n }\n \n-.layout {\n+// over specifiy, creates the same issues as nesting actually\n+body .product .product-image .layout {\n   float: left;\n-}\n\\ No newline at end of file\n+}\n+\n+// Issue: deadly specificity (!important)\n+.product-image {\n+  outline: 20px solid red !important;\n+}",
+    "path": "my.css",
+    "position": 41,
+    "original_position": 41,
+    "commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "original_commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "user": {
+      "login": "georgiee",
+      "id": 1701755,
+      "node_id": "MDQ6VXNlcjE3MDE3NTU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1701755?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/georgiee",
+      "html_url": "https://github.com/georgiee",
+      "followers_url": "https://api.github.com/users/georgiee/followers",
+      "following_url": "https://api.github.com/users/georgiee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/georgiee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/georgiee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/georgiee/subscriptions",
+      "organizations_url": "https://api.github.com/users/georgiee/orgs",
+      "repos_url": "https://api.github.com/users/georgiee/repos",
+      "events_url": "https://api.github.com/users/georgiee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/georgiee/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Easy rule: Never ever use important. There are only very, very few reasons to use such a monster of specificity. One could be to overrule inline styles `1-0-0-0` vs the higher important specificity `1-0-0-0-0`. But if you can control the content of the inline style: just fix that, don't make it worse. ",
+    "created_at": "2021-09-23T12:01:58Z",
+    "updated_at": "2021-09-23T12:01:58Z",
+    "html_url": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r714725476",
+    "pull_request_url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2",
+    "author_association": "OWNER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/714725476"
+      },
+      "html": {
+        "href": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r714725476"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2"
+      }
+    },
+    "start_line": 40,
+    "original_start_line": 40,
+    "start_side": "RIGHT",
+    "line": 42,
+    "original_line": 42,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/714727744",
+    "pull_request_review_id": 761925583,
+    "id": 714727744,
+    "node_id": "PRRC_kwDOGGiYm84qmeFA",
+    "diff_hunk": "@@ -1,6 +1,10 @@\n+html {\n+  font-size: 16px; \n+}\n+",
+    "path": "my.css",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "original_commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "user": {
+      "login": "georgiee",
+      "id": 1701755,
+      "node_id": "MDQ6VXNlcjE3MDE3NTU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1701755?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/georgiee",
+      "html_url": "https://github.com/georgiee",
+      "followers_url": "https://api.github.com/users/georgiee/followers",
+      "following_url": "https://api.github.com/users/georgiee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/georgiee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/georgiee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/georgiee/subscriptions",
+      "organizations_url": "https://api.github.com/users/georgiee/orgs",
+      "repos_url": "https://api.github.com/users/georgiee/repos",
+      "events_url": "https://api.github.com/users/georgiee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/georgiee/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "this is the base font-size for the `rem` introduced. One big problem: This pins the entire website to 16px and creates a major accessibility problem. This will override any customized font from the browser which is usually use as the base (and usually matches 16px anyway). You should use percentage values here and relate on that common standard of having 16px as the base font size of the browser.\r\n\r\nPeople can typically still resize with zoom text in/out but the browser base font-size is disabled with that so it's not the best to introduce.",
+    "created_at": "2021-09-23T12:05:27Z",
+    "updated_at": "2021-09-23T12:05:27Z",
+    "html_url": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r714727744",
+    "pull_request_url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2",
+    "author_association": "OWNER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/714727744"
+      },
+      "html": {
+        "href": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r714727744"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2"
+      }
+    },
+    "start_line": 1,
+    "original_start_line": 1,
+    "start_side": "RIGHT",
+    "line": 4,
+    "original_line": 4,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/717718213",
+    "pull_request_review_id": 765641019,
+    "id": 717718213,
+    "node_id": "PRRC_kwDOGGiYm84qx4LF",
+    "diff_hunk": "@@ -1,6 +1,10 @@\n+html {\n+  font-size: 16px; \n+}\n+\n+// magic number\n body {\n-  background: #000000;",
+    "path": "my.css",
+    "position": 7,
+    "original_position": 7,
+    "commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "original_commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "user": {
+      "login": "georgiee",
+      "id": 1701755,
+      "node_id": "MDQ6VXNlcjE3MDE3NTU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1701755?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/georgiee",
+      "html_url": "https://github.com/georgiee",
+      "followers_url": "https://api.github.com/users/georgiee/followers",
+      "following_url": "https://api.github.com/users/georgiee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/georgiee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/georgiee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/georgiee/subscriptions",
+      "organizations_url": "https://api.github.com/users/georgiee/orgs",
+      "repos_url": "https://api.github.com/users/georgiee/repos",
+      "events_url": "https://api.github.com/users/georgiee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/georgiee/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "this won't work",
+    "created_at": "2021-09-28T15:50:13Z",
+    "updated_at": "2021-09-28T15:50:13Z",
+    "html_url": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r717718213",
+    "pull_request_url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2",
+    "author_association": "OWNER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/717718213"
+      },
+      "html": {
+        "href": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r717718213"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 2,
+    "original_line": 2,
+    "side": "LEFT"
+  },
+  {
+    "url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/717718349",
+    "pull_request_review_id": 765641163,
+    "id": 717718349,
+    "node_id": "PRRC_kwDOGGiYm84qx4NN",
+    "diff_hunk": "@@ -16,10 +20,23 @@ body {\n   outline: 2px solid green;",
+    "path": "my.css",
+    "position": 14,
+    "original_position": 14,
+    "commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "original_commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "user": {
+      "login": "georgiee",
+      "id": 1701755,
+      "node_id": "MDQ6VXNlcjE3MDE3NTU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1701755?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/georgiee",
+      "html_url": "https://github.com/georgiee",
+      "followers_url": "https://api.github.com/users/georgiee/followers",
+      "following_url": "https://api.github.com/users/georgiee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/georgiee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/georgiee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/georgiee/subscriptions",
+      "organizations_url": "https://api.github.com/users/georgiee/orgs",
+      "repos_url": "https://api.github.com/users/georgiee/repos",
+      "events_url": "https://api.github.com/users/georgiee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/georgiee/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "that's cool but was here before",
+    "created_at": "2021-09-28T15:50:21Z",
+    "updated_at": "2021-09-28T15:50:21Z",
+    "html_url": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r717718349",
+    "pull_request_url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2",
+    "author_association": "OWNER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/717718349"
+      },
+      "html": {
+        "href": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r717718349"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 20,
+    "original_line": 20,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/717726324",
+    "pull_request_review_id": 765651614,
+    "id": 717726324,
+    "node_id": "PRRC_kwDOGGiYm84qx6J0",
+    "diff_hunk": "@@ -1,6 +1,10 @@\n+html {\n+  font-size: 16px; ",
+    "path": "my.css",
+    "position": 2,
+    "original_position": 2,
+    "commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "original_commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "user": {
+      "login": "georgiee",
+      "id": 1701755,
+      "node_id": "MDQ6VXNlcjE3MDE3NTU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1701755?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/georgiee",
+      "html_url": "https://github.com/georgiee",
+      "followers_url": "https://api.github.com/users/georgiee/followers",
+      "following_url": "https://api.github.com/users/georgiee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/georgiee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/georgiee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/georgiee/subscriptions",
+      "organizations_url": "https://api.github.com/users/georgiee/orgs",
+      "repos_url": "https://api.github.com/users/georgiee/repos",
+      "events_url": "https://api.github.com/users/georgiee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/georgiee/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "that's new and nice V2",
+    "created_at": "2021-09-28T15:58:43Z",
+    "updated_at": "2021-09-28T15:58:43Z",
+    "html_url": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r717726324",
+    "pull_request_url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2",
+    "author_association": "OWNER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/717726324"
+      },
+      "html": {
+        "href": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r717726324"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 2,
+    "original_line": 2,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/717728895",
+    "pull_request_review_id": 765655089,
+    "id": 717728895,
+    "node_id": "PRRC_kwDOGGiYm84qx6x_",
+    "diff_hunk": "@@ -1,6 +1,10 @@\n+html {\n+  font-size: 16px; \n+}\n+\n+// magic number\n body {\n-  background: #000000;\n-  font-size:  12px;",
+    "path": "my.css",
+    "position": 8,
+    "original_position": 8,
+    "commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "original_commit_id": "b0651533e7063d86fde1aa52bda8c4cc1751cf94",
+    "user": {
+      "login": "georgiee",
+      "id": 1701755,
+      "node_id": "MDQ6VXNlcjE3MDE3NTU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1701755?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/georgiee",
+      "html_url": "https://github.com/georgiee",
+      "followers_url": "https://api.github.com/users/georgiee/followers",
+      "following_url": "https://api.github.com/users/georgiee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/georgiee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/georgiee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/georgiee/subscriptions",
+      "organizations_url": "https://api.github.com/users/georgiee/orgs",
+      "repos_url": "https://api.github.com/users/georgiee/repos",
+      "events_url": "https://api.github.com/users/georgiee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/georgiee/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "that's great to remove",
+    "created_at": "2021-09-28T16:01:33Z",
+    "updated_at": "2021-09-28T16:01:34Z",
+    "html_url": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r717728895",
+    "pull_request_url": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2",
+    "author_association": "OWNER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/comments/717728895"
+      },
+      "html": {
+        "href": "https://github.com/georgiee/temporary-comment-api/pull/2#discussion_r717728895"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 3,
+    "original_line": 3,
+    "side": "LEFT"
+  }
+]
