@@ -20,10 +20,26 @@ Fetch latest github comments from an example repo so we have some standardized f
 The comment format is okay but the comments on the "right" side can be `context` or `addition` changes and we have to find out ourselves by searchign the hunk for the matching lines to find out where the comment belongs.
 
 ```
+# fetch a first I prepared with some example data PR
 curl \
   -H "Accept: application/vnd.github.v3+json" \
   https://api.github.com/repos/georgiee/temporary-comment-api/pulls/2/comments >| comments-github.json
 
+# fetch second PR comments and diff
+curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/satellytes/diffy/pulls/1/comments >| comments-github-v2.json
+curl \
+    https://patch-diff.githubusercontent.com/raw/satellytes/diffy/pull/1.diff  >| patch-v2.diff
+
+# pick only the interesting fields (requires jq)
+cat comments-github-v2.json | jq '.[] | {body, diff_hunk, position, original_position, created_at, start_line, original_start_line, start_side, line, original_line, side}'
+# or combine
+
+curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/satellytes/diffy/pulls/1/comments | jq '.[] | {body, diff_hunk, position, original_position, created_at, start_line, original_start_line, start_side, line, original_line, side}' | jq '[inputs]' >| comments-github-v2.json
+  
 ```
 
 Interesting. Two comments on the same line but on the right and left side (addition and removal) are not

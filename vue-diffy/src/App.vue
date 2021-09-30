@@ -1,11 +1,16 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Diff from './components/Diff.vue'
+// that's so cool, it's just working by appending `?raw`, compare this with the raw-loader from webpack 🤩
+import PatchDiff from './data/patch-v2.diff?raw';
+import PatchCommentGitHub from './data/comments-github-v2.json';
+import { parseGithubPR } from './utils/parse-github';
+
+const diffFiles = parseGithubPR(PatchDiff, PatchCommentGitHub);
+
 </script>
 
 <template>
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <Diff v-for="diffFile of diffFiles" :file="diffFile"/>
 </template>
 
 <style>

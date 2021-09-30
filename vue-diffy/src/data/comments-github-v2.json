@@ -1,0 +1,80 @@
+[
+  {
+    "body": "multiline comment. line 186 to 198 (old file)  were deleted. ",
+    "diff_hunk": "@@ -183,16 +182,3 @@ def find_diff_file(repository)\n         find_diff_file_from(comparison)\n       end\n \n-      def get_formatter_class(type)\n-        type ||= \"text\"\n-\n-        case type\n-        when 'image'\n-          Gitlab::Diff::Formatters::ImageFormatter\n-        else\n-          Gitlab::Diff::Formatters::TextFormatter\n-        end\n-      end\n-    end\n-  end\n-end",
+    "position": 31,
+    "original_position": 31,
+    "created_at": "2021-09-30T13:28:23Z",
+    "start_line": 186,
+    "original_start_line": 186,
+    "start_side": "LEFT",
+    "line": 198,
+    "original_line": 198,
+    "side": "LEFT"
+  },
+  {
+    "body": "multiline comment: the entire file `main.ts` was deleted.",
+    "diff_hunk": "@@ -1,4 +0,0 @@\n-import { createApp } from 'vue'\n-import App from './App.vue'\n-\n-createApp(App).mount('#app')",
+    "position": 4,
+    "original_position": 4,
+    "created_at": "2021-09-30T13:33:58Z",
+    "start_line": 1,
+    "original_start_line": 1,
+    "start_side": "LEFT",
+    "line": 4,
+    "original_line": 4,
+    "side": "LEFT"
+  },
+  {
+    "body": "single line comment: this is a simple addition but involves an old line (2) and new line (2) (basically swapping content",
+    "diff_hunk": "@@ -1,5 +1,5 @@\n # frozen_string_literal: true\n-\n+# add this",
+    "position": 3,
+    "original_position": 3,
+    "created_at": "2021-09-30T13:34:16Z",
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 2,
+    "original_line": 2,
+    "side": "RIGHT"
+  },
+  {
+    "body": "this is a very basic addition. no old line, new line is 71 (as it was inserted)",
+    "diff_hunk": "@@ -80,6 +68,7 @@ def identification_type(line)\n         case line[0]\n         when \"+\"\n           \"new\"\n+          add this",
+    "position": 30,
+    "original_position": 30,
+    "created_at": "2021-09-30T13:34:44Z",
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 71,
+    "original_line": 71,
+    "side": "RIGHT"
+  },
+  {
+    "body": "this is a comment on a context line where the old line (63) and new line (51) changed.",
+    "diff_hunk": "@@ -48,24 +48,12 @@ def parse(lines, diff_file: nil)\n             end\n \n             case line[0]\n-            when \"+\"\n-              line_new += 1\n-              context = :new\n-            when \"-\"\n-              line_old += 1\n-              context = :old\n-            when \"\\\\\" # rubocop:disable Lint/EmptyWhen\n-              # No increment\n-            else\n-              line_new += 1\n-              line_old += 1\n-            end\n           end",
+    "position": 16,
+    "original_position": 16,
+    "created_at": "2021-09-30T13:51:18Z",
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 51,
+    "original_line": 51,
+    "side": "RIGHT"
+  },
+  {
+    "body": "this is a comment on a context line where the line (48) did not change.\r\n",
+    "diff_hunk": "@@ -48,24 +48,12 @@ def parse(lines, diff_file: nil)\n             end",
+    "position": 1,
+    "original_position": 1,
+    "created_at": "2021-09-30T13:51:34Z",
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 48,
+    "original_line": 48,
+    "side": "RIGHT"
+  }
+]

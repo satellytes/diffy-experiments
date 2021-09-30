@@ -22,11 +22,13 @@ Hunk
     then render tr per line either with one or two cells (split or not)
 
 -->
-<script setup>
+<script setup lang="ts">
 import Note from './Note.vue';
 import {parseDiff} from '../utils/parse-diff';
-const {file} = defineProps({file: Object})
+import {GitDiffParserType} from "../utils/parse-github";
+const {file} = defineProps<{file: GitDiffParserType}>();
 const lines = parseDiff(file);
+
 </script>
 
 <!--
@@ -51,7 +53,10 @@ a hunk is called a "match" in gitlab and the diff view separates diff content fr
 -->
 <template>
   <div class="file">
-    <h2> A Diff File with {{file.hunks.length}} hunks</h2>
+    <div>
+      <strong>{{file.newPath ?? file.oldPath}} ({{file.type}})</strong>
+      <br>{{file.hunks.length}} hunks
+    </div>
     <template  v-for="line in lines">
       <!--render the code line-->
       <div class="hunk-header" v-if="line.hunk">
@@ -92,7 +97,14 @@ a hunk is called a "match" in gitlab and the diff view separates diff content fr
 
 <style scoped>
 .file {
+  border: 1px solid #aaaaaa;
+  padding: 5px;
 }
+
+.file + .file {
+  margin-top: 20px;
+}
+
 .hunk-header {
   background-color: #ddf4ff;
 }
