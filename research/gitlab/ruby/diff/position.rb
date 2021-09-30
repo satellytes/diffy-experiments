@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# add this
 # Defines a specific location, identified by paths line numbers and image coordinates,
 # within a specific diff, identified by start, head and base commit ids.
 module Gitlab
@@ -27,7 +27,6 @@ module Gitlab
       # Text position will have: new_line and old_line
       # Image position will have: width, height, x, y
       def initialize(attrs = {})
-        @formatter = get_formatter_class(attrs[:position_type]).new(attrs)
       end
 
       # `Gitlab::Diff::Position` objects are stored as serialized attributes in
@@ -183,16 +182,3 @@ module Gitlab
         find_diff_file_from(comparison)
       end
 
-      def get_formatter_class(type)
-        type ||= "text"
-
-        case type
-        when 'image'
-          Gitlab::Diff::Formatters::ImageFormatter
-        else
-          Gitlab::Diff::Formatters::TextFormatter
-        end
-      end
-    end
-  end
-end
