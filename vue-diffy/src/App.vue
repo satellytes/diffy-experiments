@@ -1,24 +1,17 @@
-<template>
-  <div id="app">
-    <HelloWorld msg="Vue & Diffy"/>
-  </div>
-</template>
-
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
-
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class App extends Vue {}
+<script setup lang="ts">
+// This starter template is using Vue 3 <script setup> SFCs
+// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import HelloWorld from './components/HelloWorld.vue'
 </script>
+
+<template>
+  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+</template>
 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #2c3e50;
   margin: 20px;
 }
 </style>

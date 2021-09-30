@@ -1,16 +1,11 @@
-# Experiment 2: Vue Diffy
+# Vue 3 + Typescript + Vite
 
-It's a pain in the ass to start projects these days and if you are not experienced you need to be lucky
-to know the CLI (if any) or decide for webpack, parcel, snowpack etc. Mostly gone are the days that you can create an `index.html`
-and start creating some code (even though there are projects who want to achieve this: deno, pika)
+This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-Anyway here is what I know about vue and this works pretty good:
+## Recommended IDE Setup
 
-```
-npx @vue/cli create --default vue-diffy
+- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
-cd vue-diffy
-yarn add @vue/cli
-yarn vue add typescript
-yarn serve
-```
+## Type Support For `.vue` Imports in TS
+
+Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.

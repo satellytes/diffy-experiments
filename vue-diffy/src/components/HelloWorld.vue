@@ -1,32 +1,37 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    works
-  </div>
-</template>
+<script setup lang="ts">
+import PatchDiff from '../data/patch.diff?raw';
+import gitDiffParser from 'gitdiff-parser';
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import Comments from '../../data/comments-github.json';
-// oh what a surprise and thanks to this comment (https://forum.vuejs.org/t/importing-text-file-as-string-in-vue-cli-3/37784/3)
-// this just works. In Angular (or any other webpack project) I know about this but it's still a pain in the ass to load text files with TS
-// until it works mostly because of the typing but sometimes also for unknown reasons. Nice 🙌
-import PatchDiff from 'raw-loader!../../data/patch.diff';
-import { parseDiff } from '@/utils/parse-diff';
+import { ref } from 'vue'
+import Diff from './Diff.vue'
+defineProps<{ msg: string }>()
 
-const diffParsedResult = parseDiff(PatchDiff);
-// TODO: We have the comments and the parsed diff
-// we can now merge them into an appropriate data format to process later with
-// vue to display
+// we know there is only one file in there
+const [diffFile] = gitDiffParser.parse(PatchDiff);
 
-console.log('Comments', Comments, diffParsedResult)
-
-@Component
-export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
-}
+const count = ref(0)
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<template>
+  <h1>{{ msg }}</h1>
+  works
+  <Diff :file="diffFile"/>
+</template>
+
 <style scoped>
+a {
+  color: #42b983;
+}
+
+label {
+  margin: 0 0.5em;
+  font-weight: bold;
+}
+
+code {
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: #304455;
+}
 </style>

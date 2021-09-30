@@ -35,4 +35,4 @@ The interesting things I found:
 + [Gitlab Diff Viewer (Vue based 🙏)](https://github.com/gitlabhq/gitlabhq/tree/master/app/assets/javascripts/diffs/)
 + [Diff Parser](https://github.com/ecomfe/gitdiff-parser)
 + [Unified Diff Format](https://www.gnu.org/software/diffutils/manual/html_node/Unified-Format.html)
-+ []
++ [Gitlab Reference Commit with many changes and some comments](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/70664/diffs)
