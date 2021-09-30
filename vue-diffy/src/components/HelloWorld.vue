@@ -7,15 +7,13 @@ import Diff from './Diff.vue'
 defineProps<{ msg: string }>()
 
 // we know there is only one file in there
-const [diffFile] = gitDiffParser.parse(PatchDiff);
-
+const diffFiles = gitDiffParser.parse(PatchDiff);
 const count = ref(0)
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
-  works
-  <Diff :file="diffFile"/>
+  <Diff v-for="diffFile of diffFiles" :file="diffFile"/>
 </template>
 
 <style scoped>

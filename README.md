@@ -36,3 +36,7 @@ The interesting things I found:
 + [Diff Parser](https://github.com/ecomfe/gitdiff-parser)
 + [Unified Diff Format](https://www.gnu.org/software/diffutils/manual/html_node/Unified-Format.html)
 + [Gitlab Reference Commit with many changes and some comments](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/70664/diffs)
++ [Gitlab docs about workign with diffs and notes](https://docs.gitlab.com/ee/development/diffs.html)
++ [Gitlab Diffs youtube ](https://www.youtube.com/watch?v=K6G3gMcFyek)
++ [Gitlab Deep Dive including diff videos, pdf, slides (okay but not that useful)](https://gitlab.com/gitlab-org/create-stage/-/issues/1)
++ 
