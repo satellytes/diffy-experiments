@@ -156,7 +156,6 @@ export function parseGithubPR(diff, comments) {
   const [hunk] = secondFile.hunks;
 
   const lines = hunk.changes.map(change => mapChangeToLine(change, comments))
-  debugger;
   return [firstFile, secondFile];
 }
 
