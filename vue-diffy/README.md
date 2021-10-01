@@ -1,4 +1,5 @@
 # Vue 3 + Typescript + Vite
+![](preview.png)
 
 ## How I imagine the future
 Start slowly, grow steadily, code doesn't need to be perfect.
