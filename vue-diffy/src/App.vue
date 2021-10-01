@@ -3,20 +3,22 @@ import Diff from './components/Diff.vue'
 // that's so cool, it's just working by appending `?raw`, compare this with the raw-loader from webpack 🤩
 import PatchDiff from './data/patch-v2.diff?raw';
 import PatchCommentGitHub from './data/comments-github-v2.json';
-import { parseGithubPR } from './utils/parse-github';
 
-const diffFiles = parseGithubPR(PatchDiff, PatchCommentGitHub);
-
+import { parseGithubPR2 } from './utils/parse-github';
+const diffFiles = parseGithubPR2(PatchDiff, PatchCommentGitHub);
 </script>
 
 <template>
-  <Diff v-for="diffFile of diffFiles" :file="diffFile"/>
+  <div class="app">
+    <Diff v-for="file of diffFiles" :file="file"/>
+  </div>
 </template>
 
 <style>
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   color: #2c3e50;
-  margin: 20px;
+  margin: auto;
+  max-width: 960px;
 }
 </style>

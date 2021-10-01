@@ -30,7 +30,7 @@ export interface GitDiffParserHunk {
   changes: GitDiffParserChange[];
 }
 
-export interface GitDiffParserType {
+export interface GitDiffParserFile {
   hunks: GitDiffParserHunk[];
   newEndingNewLine: boolean
   newMode: string
@@ -42,18 +42,30 @@ export interface GitDiffParserType {
   type: string;
 }
 
-enum DiffLineType {
+
+
+export interface DiffFile {
+  oldPath: string;
+  newPath: string;
+  hunkCount: number;
+  changeType: DiffFileType;
+  lines: DiffLine[];
+}
+
+export enum DiffFileType {
+  Add = 'add',
+  Delete = 'delete',
+  Modify = 'modify'
+}
+
+export enum DiffLineType {
   Context = "normal",
   Addition = "insert",
-  Removal = "delete"
+  Removal = "delete",
+  Hunk = "hunk"
 }
 
-interface DiffNote {
-  date: string;
-  body: string;
-}
-
-interface DiffLine {
+export interface DiffLine {
   content: string;
   type: DiffLineType
   oldLine: number | null;
@@ -63,6 +75,13 @@ interface DiffLine {
   // can still refer to multiple lines
   note: DiffNote | null;
 }
+
+export interface DiffNote {
+  date: string;
+  body: string;
+}
+
+
 
 /**
  * the parser we are using return different variables
@@ -144,19 +163,51 @@ function mapChangeToLine(change: GitDiffParserChange, comments: GithubComment[])
   }
 }
 
-export function parseGithubPR(diff, comments) {
+function createLineFromHunk(hunk: GitDiffParserHunk): DiffLine {
+  return {
+    content: hunk.content,
+    type: DiffLineType.Hunk,
+    oldLine: null,
+    newLine: null,
+    changeOriginal: null,
+    note: null
+  }
+}
+
+function parseFile(file: GitDiffParserFile, comments: GithubComment[]) {
+  // we will collapse multiple hunks into a flat hierarchy of lines
+  const allLines = file.hunks.reduce((accu, hunkData) => {
+    const hunkLine = createLineFromHunk(hunkData);
+    const hunkLines = hunkData.changes.map(change => mapChangeToLine(change, comments))
+    accu.push(hunkLine, ...hunkLines);
+    return accu;
+  }, [] as DiffLine[])
+
+  const diffFile: DiffFile = {
+    lines: allLines,
+    hunkCount: file.hunks.length,
+    oldPath: file.oldPath,
+    newPath: file.newPath,
+    changeType: file.type as DiffFileType
+  }
+
+  return diffFile;
+}
+
+export function parseGithubPR2(diff, comments: any[]) {
   // this will get as an arbitrary diff format we can interact with but it's not perfect
   // and it's lacking any support for comments
-  const result = gitDiffParser.parse(diff) as GitDiffParserType[];
-  const [firstFile, secondFile] = result;
-  const [firstComment] = comments;
-  // let wire the data a little bit different to our liking
-  // ...
-  console.log(firstFile, secondFile, firstComment)
-  const [hunk] = secondFile.hunks;
-
-  const lines = hunk.changes.map(change => mapChangeToLine(change, comments))
-  return [firstFile, secondFile];
+  const result = gitDiffParser.parse(diff) as GitDiffParserFile[];
+  return result.map(data => parseFile(data, comments));
 }
+
+export function parseGithubPR(diff, comments: GithubComment[]) {
+  // this will get as an arbitrary diff format we can interact with but it's not perfect
+  // and it's lacking any support for comments
+  const result = gitDiffParser.parse(diff) as GitDiffParserFile[];
+
+  return result
+}
+
 
 

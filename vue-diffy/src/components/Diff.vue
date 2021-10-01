@@ -24,94 +24,87 @@ Hunk
 -->
 <script setup lang="ts">
 import Note from './Note.vue';
-import {parseDiff} from '../utils/parse-diff';
-import {GitDiffParserType} from "../utils/parse-github";
-const {file} = defineProps<{file: GitDiffParserType}>();
-const lines = parseDiff(file);
-
+import { DiffFile } from '../utils/parse-github';
+import {DiffLineType} from '../utils/parse-github';
+const {file} = defineProps<{file: DiffFile}>();
 </script>
 
-<!--
 
-row/line
-  left-side
-    gutter/nr
-    content
-  right-side
-    gutter
-    content
-
-
-row/line (old, new, context)
-gutter/nr
-content
-
-row -> diff row or notes row (marked with renderCommentRow if form or discussion left or right)
-
-a hunk is called a "match" in gitlab and the diff view separates diff content from matches with a flag `isMatchLine`.
-
--->
 <template>
   <div class="file">
-    <div>
-      <strong>{{file.newPath ?? file.oldPath}} ({{file.type}})</strong>
-      <br>{{file.hunks.length}} hunks
+    <div class="file-header">
+      <strong>{{file.newPath ?? file.oldPath}} ({{file.changeType}})</strong>
+      <br>{{file.lines.length}} lines
     </div>
-    <template  v-for="line in lines">
-      <!--render the code line-->
-      <div class="hunk-header" v-if="line.hunk">
-        {{line.hunkHeader}}
+    <template  v-for="line in file.lines">
+      <!--render any hunk header line given -->
+      <div v-if="line.type === DiffLineType.Hunk" class="hunk">
+        {{line.content}}
       </div>
 
-      <!--render the code line-->
-      <div v-if="line.code"  class="row code-line" :class="{added: line.change.isInsert, removed: line.change.isDelete}">
-        <template v-if="line.change.isDelete">
-          <div class="line-number">{{ line.change.lineNumber }}</div>
-          <div class="line-number"></div>
-        </template>
+      <template v-if="line.type !== DiffLineType.Hunk">
+        <!--render the code line-->
+        <div class="row code-line" :class="{added: line.type === DiffLineType.Addition, removed: line.type === DiffLineType.Removal}">
+          <div class="line-number" :class="{added: line.type === DiffLineType.Addition, removed: line.type === DiffLineType.Removal}">{{ line.oldLine }}</div>
+          <div class="line-number" :class="{added: line.type === DiffLineType.Addition, removed: line.type === DiffLineType.Removal}">{{ line.newLine }}</div>
 
-        <template v-if="line.change.isInsert">
-          <div class="line-number"></div>
-          <div class="line-number">{{ line.change.lineNumber }}</div>
-        </template>
-
-
-        <template v-if="line.change.isNormal">
-          <div class="line-number">{{ line.change.oldLineNumber }}</div>
-          <div class="line-number">{{ line.change.newLineNumber }}</div>
-        </template>
-
-        <div class="gutter">
-          <template v-if="line.change.isDelete">-</template>
-          <template v-if="line.change.isInsert">+</template>
+          <div class="gutter">
+            <template v-if="line.type === DiffLineType.Removal">-</template>
+            <template v-if="line.type === DiffLineType.Addition">+</template>
+          </div>
+          <div class="code">{{line.content}}</div>
         </div>
-        <div class="code">{{line.change.content}}</div>
-      </div>
 
-      <!--render the comment if any is attached to the line-->
-      <Note v-if="line.discussion" :note="line.note"/>
+        <!--render the comment if any is attached to the line-->
+        <Note v-if="line.note" :note="line.note"/>
+      </template>
     </template>
   </div>
 </template>
 
 
 <style scoped>
+.file-header {
+  padding: 10px;
+}
+
+.line-number {
+  background-color: #fafafa;
+  border-right: 1px solid #f0f0f0;
+  padding: 0 10px 0 5px;
+  text-align: right;
+  color: rgba(0,0,0,0.3);
+}
+
+.line-number.added {
+  background-color: #ddfbe6;
+  border-color: #c7f0d2;
+}
+
+.line-number.removed {
+  background-color: #f9d7dc;
+  border-color: #fac5cd;
+}
+
 .file {
   border: 1px solid #aaaaaa;
-  padding: 5px;
 }
 
 .file + .file {
   margin-top: 20px;
 }
 
-.hunk-header {
-  background-color: #ddf4ff;
-}
 .row {
   display: grid;
-  grid-template-columns: 50px 50px 50px 1fr;
-  padding: 0 18px;
+  grid-template-columns: 50px 50px 30px 1fr;
+}
+.hunk {
+  text-align: left;
+  background-color: #ddf4ff;
+  padding: 10px;
+  padding-left: 150px;
+  border-top: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
 }
 
 .row.added {
@@ -124,6 +117,14 @@ a hunk is called a "match" in gitlab and the diff view separates diff content fr
 
 .code-line {
   white-space: break-spaces;
+}
+.gutter {
+  text-align: center;
+}
+.code {
+  padding: 0 1.5em;
+  font-family: "Menlo", "DejaVu Sans Mono", "Liberation Mono", "Consolas", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+  color: #303030;
 }
 </style>
 
