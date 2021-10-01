@@ -55,6 +55,7 @@ mkdir -p "$OUTPUT_FOLDER"
 echo $OUTPUT_FOLDER
 curl "https://patch-diff.githubusercontent.com/raw/$REPO/pull/$PR.diff"  >| $OUTPUT_FOLDER/patch.diff
 echo "https://api.github.com/repos/$REPO/pulls/$PR/comments"
+# this was nifty: jq swallows the first json array item if you don't pass `-n` option in that line: jq -n '[inputs]' \
 curl \
   -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/$REPO/pulls/$PR/comments" \
   | jq '.[] | {body, diff_hunk, position, original_position, created_at, start_line, original_start_line, start_side, line, original_line, side}' \

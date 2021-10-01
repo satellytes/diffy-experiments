@@ -1,5 +1,18 @@
 [
   {
+    "body": "A nifty set of problems coming from this innocent idea of organizing the content in neat blocks of css.\r\n\r\n**Problem 1: (DOM mirroring)**\r\nThis is exactly replicating the DOM structure which makes the CSS very dependent of the markup\r\nwhich will cause trouble in the future.\r\n\r\n**Problem 2: (Too much nesting)**\r\nThis is nesting for no reason, the flat version would work too\r\nwhich would also prevent the high cognitive load on the reader's mind\r\nwho constantly need to resolve the full and normalized selector\r\n\r\n**Problem 3: (over-specificity)**\r\nBy using such a deep nesting it's also over specifying the target for no reason. A simple .header-link ",
+    "diff_hunk": "@@ -16,10 +20,23 @@ body {\n   outline: 2px solid green;\n }\n \n-.paragraph {\n-  font-size:  16px;\n+// issue1: nesting\n+body {\n+  .product {\n+    .product-imag {\n+      .paragraph {\n+        font-size:  1rem;\n+      }\n+    }\n+  }",
+    "position": 27,
+    "original_position": 27,
+    "created_at": "2021-09-23T11:58:35Z",
+    "start_line": 24,
+    "original_start_line": 24,
+    "start_side": "RIGHT",
+    "line": 31,
+    "original_line": 31,
+    "side": "RIGHT"
+  },
+  {
     "body": "This is actually very related to nesting selector. Such a over-specificity creates a binding to the DOM and it's creating a css statement with a specificity being too high `0 - 4 - 1` (4x class, 1 element)",
     "diff_hunk": "@@ -16,10 +20,23 @@ body {\n   outline: 2px solid green;\n }\n \n-.paragraph {\n-  font-size:  16px;\n+// issue1: nesting\n+body {\n+  .product {\n+    .product-imag {\n+      .paragraph {\n+        font-size:  1rem;\n+      }\n+    }\n+  }\n }\n \n-.layout {\n+// over specifiy, creates the same issues as nesting actually\n+body .product .product-image .layout {",
     "position": 32,

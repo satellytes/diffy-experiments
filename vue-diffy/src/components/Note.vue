@@ -39,8 +39,9 @@ function asRelativeDate(value: string) {
   margin: 0 5px;
 }
 .note {
-  margin: 10px;
   padding: 20px;
-  border: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #fffaec;
 }
 </style>
