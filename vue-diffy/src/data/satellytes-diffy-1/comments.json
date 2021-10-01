@@ -1,5 +1,18 @@
 [
   {
+    "body": "this file was added and did not exist before, hence the `-0,0` in the chunk header.\r\nsimple insert with no old line.",
+    "diff_hunk": "@@ -0,0 +1 @@\n+nice!",
+    "position": 1,
+    "original_position": 1,
+    "created_at": "2021-09-30T13:24:44Z",
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1,
+    "original_line": 1,
+    "side": "RIGHT"
+  },
+  {
     "body": "multiline comment. line 186 to 198 (old file)  were deleted. ",
     "diff_hunk": "@@ -183,16 +182,3 @@ def find_diff_file(repository)\n         find_diff_file_from(comparison)\n       end\n \n-      def get_formatter_class(type)\n-        type ||= \"text\"\n-\n-        case type\n-        when 'image'\n-          Gitlab::Diff::Formatters::ImageFormatter\n-        else\n-          Gitlab::Diff::Formatters::TextFormatter\n-        end\n-      end\n-    end\n-  end\n-end",
     "position": 31,

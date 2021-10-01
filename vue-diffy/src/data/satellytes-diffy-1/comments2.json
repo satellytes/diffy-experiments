@@ -1,0 +1,21 @@
+{
+  "body": "this file was added and did not exist before, hence the `-0,0` in the chunk header.\r\nsimple insert with no old line."
+}
+{
+  "body": "multiline comment. line 186 to 198 (old file)  were deleted. "
+}
+{
+  "body": "multiline comment: the entire file `main.ts` was deleted."
+}
+{
+  "body": "single line comment: this is a simple addition but involves an old line (2) and new line (2) (basically swapping content"
+}
+{
+  "body": "this is a very basic addition. no old line, new line is 71 (as it was inserted)"
+}
+{
+  "body": "this is a comment on a context line where the old line (63) and new line (51) changed."
+}
+{
+  "body": "this is a comment on a context line where the line (48) did not change.\r\n"
+}

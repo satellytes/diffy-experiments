@@ -129,6 +129,7 @@ function commentToNote(comment: GithubComment): DiffNote {
 }
 
 function findCommentForChange(change, comments: GithubComment[], line) {
+  console.log('findCommentForChange', change, comments)
   let comment;
   if(change.isDelete) {
     comment = comments.find(comment => comment.original_line === change.lineNumber && comment.side === "LEFT") ?? null
@@ -194,20 +195,10 @@ function parseFile(file: GitDiffParserFile, comments: GithubComment[]) {
   return diffFile;
 }
 
-export function parseGithubPR2(diff, comments: any[]) {
+export function parseGithubPR(diff, comments: any[]) {
   // this will get as an arbitrary diff format we can interact with but it's not perfect
   // and it's lacking any support for comments
   const result = gitDiffParser.parse(diff) as GitDiffParserFile[];
   return result.map(data => parseFile(data, comments));
 }
-
-export function parseGithubPR(diff, comments: GithubComment[]) {
-  // this will get as an arbitrary diff format we can interact with but it's not perfect
-  // and it's lacking any support for comments
-  const result = gitDiffParser.parse(diff) as GitDiffParserFile[];
-
-  return result
-}
-
-
 

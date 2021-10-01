@@ -27,6 +27,7 @@ import Note from './Note.vue';
 import { DiffFile } from '../utils/parse-github';
 import {DiffLineType} from '../utils/parse-github';
 const {file} = defineProps<{file: DiffFile}>();
+console.log(file)
 </script>
 
 

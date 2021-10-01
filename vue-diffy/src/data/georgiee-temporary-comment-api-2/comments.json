@@ -1,0 +1,93 @@
+[
+  {
+    "body": "This is actually very related to nesting selector. Such a over-specificity creates a binding to the DOM and it's creating a css statement with a specificity being too high `0 - 4 - 1` (4x class, 1 element)",
+    "diff_hunk": "@@ -16,10 +20,23 @@ body {\n   outline: 2px solid green;\n }\n \n-.paragraph {\n-  font-size:  16px;\n+// issue1: nesting\n+body {\n+  .product {\n+    .product-imag {\n+      .paragraph {\n+        font-size:  1rem;\n+      }\n+    }\n+  }\n }\n \n-.layout {\n+// over specifiy, creates the same issues as nesting actually\n+body .product .product-image .layout {",
+    "position": 32,
+    "original_position": 32,
+    "created_at": "2021-09-23T12:00:12Z",
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 35,
+    "original_line": 35,
+    "side": "RIGHT"
+  },
+  {
+    "body": "Easy rule: Never ever use important. There are only very, very few reasons to use such a monster of specificity. One could be to overrule inline styles `1-0-0-0` vs the higher important specificity `1-0-0-0-0`. But if you can control the content of the inline style: just fix that, don't make it worse. ",
+    "diff_hunk": "@@ -16,10 +20,23 @@ body {\n   outline: 2px solid green;\n }\n \n-.paragraph {\n-  font-size:  16px;\n+// issue1: nesting\n+body {\n+  .product {\n+    .product-imag {\n+      .paragraph {\n+        font-size:  1rem;\n+      }\n+    }\n+  }\n }\n \n-.layout {\n+// over specifiy, creates the same issues as nesting actually\n+body .product .product-image .layout {\n   float: left;\n-}\n\\ No newline at end of file\n+}\n+\n+// Issue: deadly specificity (!important)\n+.product-image {\n+  outline: 20px solid red !important;\n+}",
+    "position": 41,
+    "original_position": 41,
+    "created_at": "2021-09-23T12:01:58Z",
+    "start_line": 40,
+    "original_start_line": 40,
+    "start_side": "RIGHT",
+    "line": 42,
+    "original_line": 42,
+    "side": "RIGHT"
+  },
+  {
+    "body": "this is the base font-size for the `rem` introduced. One big problem: This pins the entire website to 16px and creates a major accessibility problem. This will override any customized font from the browser which is usually use as the base (and usually matches 16px anyway). You should use percentage values here and relate on that common standard of having 16px as the base font size of the browser.\r\n\r\nPeople can typically still resize with zoom text in/out but the browser base font-size is disabled with that so it's not the best to introduce.",
+    "diff_hunk": "@@ -1,6 +1,10 @@\n+html {\n+  font-size: 16px; \n+}\n+",
+    "position": 4,
+    "original_position": 4,
+    "created_at": "2021-09-23T12:05:27Z",
+    "start_line": 1,
+    "original_start_line": 1,
+    "start_side": "RIGHT",
+    "line": 4,
+    "original_line": 4,
+    "side": "RIGHT"
+  },
+  {
+    "body": "this won't work",
+    "diff_hunk": "@@ -1,6 +1,10 @@\n+html {\n+  font-size: 16px; \n+}\n+\n+// magic number\n body {\n-  background: #000000;",
+    "position": 7,
+    "original_position": 7,
+    "created_at": "2021-09-28T15:50:13Z",
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 2,
+    "original_line": 2,
+    "side": "LEFT"
+  },
+  {
+    "body": "that's cool but was here before",
+    "diff_hunk": "@@ -16,10 +20,23 @@ body {\n   outline: 2px solid green;",
+    "position": 14,
+    "original_position": 14,
+    "created_at": "2021-09-28T15:50:21Z",
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 20,
+    "original_line": 20,
+    "side": "RIGHT"
+  },
+  {
+    "body": "that's new and nice V2",
+    "diff_hunk": "@@ -1,6 +1,10 @@\n+html {\n+  font-size: 16px; ",
+    "position": 2,
+    "original_position": 2,
+    "created_at": "2021-09-28T15:58:43Z",
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 2,
+    "original_line": 2,
+    "side": "RIGHT"
+  },
+  {
+    "body": "that's great to remove",
+    "diff_hunk": "@@ -1,6 +1,10 @@\n+html {\n+  font-size: 16px; \n+}\n+\n+// magic number\n body {\n-  background: #000000;\n-  font-size:  12px;",
+    "position": 8,
+    "original_position": 8,
+    "created_at": "2021-09-28T16:01:33Z",
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 3,
+    "original_line": 3,
+    "side": "LEFT"
+  }
+]

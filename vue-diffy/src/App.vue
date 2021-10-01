@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import Diff from './components/Diff.vue'
+// alternative from https://github.com/satellytes/diffy/pull/1
 // that's so cool, it's just working by appending `?raw`, compare this with the raw-loader from webpack 🤩
-import PatchDiff from './data/patch-v2.diff?raw';
-import PatchCommentGitHub from './data/comments-github-v2.json';
+import PatchDiff from './data/satellytes-diffy-1/patch.diff?raw';
+import CommentsGitHub from './data/satellytes-diffy-1/comments.json';
 
-import { parseGithubPR2 } from './utils/parse-github';
-const diffFiles = parseGithubPR2(PatchDiff, PatchCommentGitHub);
+// alternative from https://github.com/georgiee/temporary-comment-api/pull/2
+// import PatchDiff from './data/georgiee-temporary-comment-api-2/patch.diff?raw';
+// import CommentsGitHub from './data/georgiee-temporary-comment-api-2/comments.json';
+
+import { parseGithubPR } from './utils/parse-github';
+const diffFiles = parseGithubPR(PatchDiff, CommentsGitHub);
 </script>
 
 <template>
