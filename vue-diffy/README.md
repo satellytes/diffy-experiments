@@ -1,4 +1,6 @@
 # Vue 3 + Typescript + Vite
+Compare the [PR](https://github.com/satellytes/diffy/pull/1/files) with the source data with the following vue component after the data (diff & comments) is fetched, parsed and rendered 🙌
+
 ![](preview.png)
 
 ## How I imagine the future
