@@ -1,0 +1,6 @@
+add new diff file
+<%= form_with model: @diff do |form| %>
+  Title: <%= form.text_field :title %>
+  Source: <%= form.text_area :source %>
+  <%= form.submit %>
+<% end %>

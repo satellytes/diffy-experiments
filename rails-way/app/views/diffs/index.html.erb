@@ -1,0 +1,10 @@
+<h1>Diffs#index</h1>
+<p>that works and here we will list the diff records and the detail views could already involve the vue renderer</p>
+<%= link_to "add diff", new_diff_path %>
+
+
+<ul>
+  <% @diffs.each do |diff| %>
+    <li><%= link_to diff.title, diff %> <span title="Comments">(<%= diff.comments.size %>)</span></li>
+  <% end %>
+</ul>

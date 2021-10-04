@@ -1,0 +1,39 @@
+<%= link_to "overview", diffs_path %>
+<h1><%= @diff.title %></h1>
+<pre><%= @diff.source %></pre>
+<h2>Comments</h2>
+<h3>Add comment</h3>
+
+<hr>
+<%= form_with model: [@diff, @new_comment] do |f| %>
+  <div>
+    Author: <%= f.text_field :author %>
+  </div>
+  <div>
+    Body: <%= f.text_area :body %>
+  </div>
+  <div>
+    Line: <%= f.text_field :line %>
+  </div>
+  <div>
+    <% Comment.sides.keys.each do |side| %>
+      <%= f.radio_button :side, side %>
+      <%= f.label "#{:side}_#{side.parameterize.underscore}", side.humanize %>
+    <% end %>
+
+  </div>
+  <%= f.submit "Add Comment" %>
+<% end %>
+
+<% @diff.comments.each do |comment| %>
+  <div class="comment">
+    <h3><%= comment.author %></h3>
+    <p><%= comment.body %></p>
+    <p><%= comment.id %></p>
+    <p><%= comment.side %></p>
+
+    <%= link_to 'Delete', diff_comment_path(@diff, comment),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>

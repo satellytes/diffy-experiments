@@ -12,6 +12,7 @@ Read the [Notion Docs](https://www.notion.so/satellytes/Codename-Diffy-ef969ac1c
 Click for details
 + [ Frankenstein's Monster (React Parse & View w/ comments)](react-frankenstein-monster/)
 + [ Vue Diffy (organic growing with parser & viewer)](vue-diffy/)
++ [ Rails Way (challenge management & API endpoint)](rails-way/)
 
 # Lost & Found
 Some stuff I needed to fetch data from github or whatever comes.
