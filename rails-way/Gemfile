@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'vite_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,6 +46,10 @@ group :development do
   gem 'rexml'
 end
 
+# API
+gem 'grape', '~> 1.5.2'
+gem 'grape-entity', '~> 0.10.0'
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
@@ -55,6 +60,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'js_from_routes'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

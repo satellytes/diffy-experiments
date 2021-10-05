@@ -17,6 +17,11 @@ module RailsWay
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    config.eager_load_paths << Rails.root.join("lib")
+    # config.eager_load_paths << Rails.root.join("lib")
+
+    config.autoload_paths << config.root.join('lib')
+
+    # debug zeitwerk autoloading magic
+    #Rails.autoloaders.log!
   end
 end

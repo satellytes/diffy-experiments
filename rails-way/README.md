@@ -47,3 +47,22 @@ https://gitlab.com/theeunknowns/test/-/merge_requests/1/diffs_batch.json?diff_he
 (all discussions/threads. four single comments create four discussions with a single note)
 https://gitlab.com/theeunknowns/test/-/merge_requests/1/discussions.json
 
+Installed vite ruby to make vite with vue possible.
+There is now a second server to run if we want to actively develop js: `bundle exec vite dev`
+otherwise vite itself builds once when rails is starting.
+
+Introduced the great `Grape` API framework and created a first endpoint. While doing so I also checked
+the documentation on how autoloading is working these days (finding the stuff without requiring it which is super common with ruby).
+
+Here is the great documentation for the `Zeitwerk` autloading mechanism:
+this https://guides.rubyonrails.org/v6.0.3/autoloading_and_reloading_constants.html
+With the API at our hands we can provide json API output for our vue diff viewer (once we make it available)
+
+(hello world works: localhost:3000/api/hello )
+
+I also struggled sorting my mind today. Diffs are parsed in gitlab because they are a fully fledged system. If we go that routes
+it's like being back at zero after the great success with vue. Maybe it's fine to store the diff files as is (plain text), have user + comments in addition. Without a proper parser we can't validate any new comments and we are very dependent on the frontend to make any sense of the comments (we will kind of mimic the github comment output because that's what we are reading right now).
+
+I think this is the best for the first step: Store plain diffs plus users & comments. No other parsing artefacts. The rest should happen in the frontend which should send comment + metadata (lines etc, hunk header?). We can then slightly refactor to have a more atomic structure of diffs > hunks > lines so comments can refer to the lines more easily. but that's sounds like the future right now.
+
+good to know: `alt + p` toggles the performance badge in the output. 

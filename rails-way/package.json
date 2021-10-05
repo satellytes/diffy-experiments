@@ -2,16 +2,24 @@
   "name": "rails-way",
   "private": true,
   "dependencies": {
+    "@js-from-routes/client": "^1.0.2",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
+    "@vitejs/plugin-vue": "^1.9.3",
     "turbolinks": "^5.2.0",
+    "vue": "^3.2.16",
+    "vue-jest": "^3.0.7",
+    "vue3-jest": "^27.0.0-alpha.1",
+    "vue3-markdown-it": "^1.0.9",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "vite": "^2.5.0",
+    "vite-plugin-ruby": "^3.0.0",
     "webpack-dev-server": "^3"
   }
 }
