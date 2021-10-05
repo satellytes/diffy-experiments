@@ -14,7 +14,14 @@ class DiffsController < ApplicationController
 
   def create
     @diff = Diff.create(diff_params)
-    redirect_to @diff
+    redirect_to @diff, notice: "Diff created ✅"
+  end
+
+
+  def destroy
+    @diff = Diff.find(params[:id])
+    @diff.destroy
+    redirect_to diffs_path, notice: "Diff deleted"
   end
 
   private

@@ -6,13 +6,10 @@ class CommentsController < ApplicationController
     @diff = Diff.find(params[:diff_id])
     @comment = @diff.comments.build(comment_params)
 
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to diff_path(@diff), notice: 'Comment was successfully created.' }
-      else
-        flash.now[:error] = "It doesnt work"
-        redirect_to diff_path(@diff)
-      end
+    if @comment.save
+      redirect_to diff_path(@diff), notice: 'Comment was successfully created.'
+    else
+      redirect_to diff_path(@diff), alert: 'Something is wrong'
     end
   end
 
@@ -25,6 +22,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:author, :body, :line, :side, :diff_id)
+    params.require(:comment).permit(:author_id, :body, :line, :side, :diff_id)
   end
 end

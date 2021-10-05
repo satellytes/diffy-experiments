@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_04_160129) do
+ActiveRecord::Schema.define(version: 2021_10_05_064702) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
-    t.string "author"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "diff_id", null: false
     t.string "line"
     t.integer "side", default: 0
+    t.integer "author_id", null: false
+    t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["diff_id"], name: "index_comments_on_diff_id"
   end
 
@@ -30,5 +31,12 @@ ActiveRecord::Schema.define(version: 2021_10_04_160129) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "comments", "diffs"
+  add_foreign_key "comments", "users", column: "author_id"
 end

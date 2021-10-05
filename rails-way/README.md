@@ -38,3 +38,12 @@ Of course I had to read about Rails again to get back into the mood again (being
 + The generator is super convenient and every RoR developer uses it where in JavaScript you are always undecided and sometimes thinks are not working as expected. In Rails many times you find generators you wouldn't expect
 + The database migration is just fund. `rake db:drop`,  `rake db:migrate`, `rake:db:reset` or `rake db:seed` are some commands you can use to modify your database. It's so much fun. I'm sure migrations are available in many other backend frameworks but it just works great in Rails and I have a lot of fun just shaping the models 🌟
 + The meta programming aspects of Ruby are perfectly integrated in Ruby on Rails. I love things like `diffs.comments.create(author: 'Georgios', body: 'Works')` just work because of a single line in the model `has_many :comments, dependent: :destroy` and Rails creates everything related to the dependent model 'comments' including the foreign key relationship to the parent diff model. 
+
+## Lost & Found
+Main entry point for gitlab merge request file + comments seems to be:
+(all diff files involved)
+https://gitlab.com/theeunknowns/test/-/merge_requests/1/diffs_batch.json?diff_head=true&view=inline&w=0&page=0&per_page=5
+
+(all discussions/threads. four single comments create four discussions with a single note)
+https://gitlab.com/theeunknowns/test/-/merge_requests/1/discussions.json
+

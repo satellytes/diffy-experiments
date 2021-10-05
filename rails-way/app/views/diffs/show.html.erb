@@ -1,13 +1,28 @@
 <%= link_to "overview", diffs_path %>
 <h1><%= @diff.title %></h1>
-<pre><%= @diff.source %></pre>
+
+<%= link_to 'Delete Diff', diff_path(@diff),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+
+<details>
+  <summary>raw source</summary>
+  <pre><%= @diff.source %></pre>
+</details>
+
+<pre>
+  <% @diff.diff_lines.each do |line| %>
+(<%= line.index %>) (<%= line.type %>) <%= line.text %>
+  <% end %>
+</pre>
+
 <h2>Comments</h2>
 <h3>Add comment</h3>
 
 <hr>
 <%= form_with model: [@diff, @new_comment] do |f| %>
   <div>
-    Author: <%= f.text_field :author %>
+    Author: <%= f.collection_select(:author_id, User.all, :id, :name, {prompt:true}) %>
   </div>
   <div>
     Body: <%= f.text_area :body %>
@@ -27,10 +42,10 @@
 
 <% @diff.comments.each do |comment| %>
   <div class="comment">
-    <h3><%= comment.author %></h3>
+    <h3><%= comment.author.name %></h3>
+    <p>Position <%= comment.line %> (<%= comment.side %>)</p>
     <p><%= comment.body %></p>
-    <p><%= comment.id %></p>
-    <p><%= comment.side %></p>
+
 
     <%= link_to 'Delete', diff_comment_path(@diff, comment),
                 method: :delete,

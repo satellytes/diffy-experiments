@@ -1,0 +1,263 @@
+{
+  "diff_files": [
+    {
+      "content_sha": "e0de9d2dd42b60759c0e160ac87d89e8a92c35d3",
+      "submodule": false,
+      "submodule_link": null,
+      "submodule_tree_url": null,
+      "submodule_compare": null,
+      "edit_path": "/theeunknowns/test/-/edit/george-sy-main-patch-64853/new-file.md?from_merge_request_iid=1",
+      "ide_edit_path": "/-/ide/project/theeunknowns/test/merge_requests/1",
+      "old_path_html": "new-file.md",
+      "new_path_html": "new-file.md",
+      "blob": {
+        "id": "d9789330b91c01573e41128145b6d990a2e048a6",
+        "path": "new-file.md",
+        "name": "new-file.md",
+        "mode": "100644",
+        "readable_text": true,
+        "icon": "doc-text"
+      },
+      "can_modify_blob": true,
+      "file_identifier_hash": "eb8c78e2c2043161173ecbaa0ee979e8afa040cd",
+      "file_hash": "2c5d9cc8962171d5bc5a6e6c3c768ccbed96c177",
+      "file_path": "new-file.md",
+      "old_path": "new-file.md",
+      "new_path": "new-file.md",
+      "new_file": true,
+      "renamed_file": false,
+      "deleted_file": false,
+      "diff_refs": {
+        "base_sha": "3ba06876e99472d2958ee8b53f09578ddfc20ce8",
+        "start_sha": "3ba06876e99472d2958ee8b53f09578ddfc20ce8",
+        "head_sha": "e0de9d2dd42b60759c0e160ac87d89e8a92c35d3"
+      },
+      "stored_externally": null,
+      "external_storage": null,
+      "mode_changed": true,
+      "a_mode": "0",
+      "b_mode": "100644",
+      "viewer": {
+        "name": "text",
+        "error": null,
+        "error_message": null,
+        "collapsed": null
+      },
+      "alternate_viewer": null,
+      "old_size": null,
+      "new_size": 33,
+      "conflict_type": null,
+      "added_lines": 6,
+      "removed_lines": 0,
+      "load_collapsed_diff_url": "/theeunknowns/test/-/merge_requests/1/diff_for_path?file_identifier=new-file.md-true-false-false\u0026new_path=new-file.md\u0026old_path=new-file.md",
+      "view_path": "/theeunknowns/test/-/blob/e0de9d2dd42b60759c0e160ac87d89e8a92c35d3/new-file.md",
+      "replaced_view_path": null,
+      "context_lines_path": "/theeunknowns/test/-/blob/e0de9d2dd42b60759c0e160ac87d89e8a92c35d3/new-file.md/diff",
+      "highlighted_diff_lines": [
+        {
+          "line_code": "2c5d9cc8962171d5bc5a6e6c3c768ccbed96c177_0_1",
+          "type": "new",
+          "old_line": null,
+          "new_line": 1,
+          "text": "+added content",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC1\" class=\"line\" lang=\"markdown\"\u003eadded content\u003c/span\u003e\n",
+          "can_receive_suggestion": true
+        },
+        {
+          "line_code": "2c5d9cc8962171d5bc5a6e6c3c768ccbed96c177_0_2",
+          "type": "new",
+          "old_line": null,
+          "new_line": 2,
+          "text": "+for a new ",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC2\" class=\"line\" lang=\"markdown\"\u003efor a new \u003c/span\u003e\n",
+          "can_receive_suggestion": true
+        },
+        {
+          "line_code": "2c5d9cc8962171d5bc5a6e6c3c768ccbed96c177_0_3",
+          "type": "new",
+          "old_line": null,
+          "new_line": 3,
+          "text": "+",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC3\" class=\"line\" lang=\"markdown\"\u003e\u003c/span\u003e\n",
+          "can_receive_suggestion": true
+        },
+        {
+          "line_code": "2c5d9cc8962171d5bc5a6e6c3c768ccbed96c177_0_4",
+          "type": "new",
+          "old_line": null,
+          "new_line": 4,
+          "text": "+",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC4\" class=\"line\" lang=\"markdown\"\u003e\u003c/span\u003e\n",
+          "can_receive_suggestion": true
+        },
+        {
+          "line_code": "2c5d9cc8962171d5bc5a6e6c3c768ccbed96c177_0_5",
+          "type": "new",
+          "old_line": null,
+          "new_line": 5,
+          "text": "+",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC5\" class=\"line\" lang=\"markdown\"\u003e\u003c/span\u003e\n",
+          "can_receive_suggestion": true
+        },
+        {
+          "line_code": "2c5d9cc8962171d5bc5a6e6c3c768ccbed96c177_0_6",
+          "type": "new",
+          "old_line": null,
+          "new_line": 6,
+          "text": "+file",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC6\" class=\"line\" lang=\"markdown\"\u003efile\u003c/span\u003e",
+          "can_receive_suggestion": true
+        }
+      ],
+      "is_fully_expanded": true,
+      "code_navigation_path": null
+    },
+    {
+      "content_sha": "e0de9d2dd42b60759c0e160ac87d89e8a92c35d3",
+      "submodule": false,
+      "submodule_link": null,
+      "submodule_tree_url": null,
+      "submodule_compare": null,
+      "edit_path": "/theeunknowns/test/-/edit/george-sy-main-patch-64853/works.md?from_merge_request_iid=1",
+      "ide_edit_path": "/-/ide/project/theeunknowns/test/merge_requests/1",
+      "old_path_html": "works.md",
+      "new_path_html": "works.md",
+      "blob": {
+        "id": "9074a33c9ea66a2c7f7edb6aa29c939e24bc5f85",
+        "path": "works.md",
+        "name": "works.md",
+        "mode": "100644",
+        "readable_text": true,
+        "icon": "doc-text"
+      },
+      "can_modify_blob": true,
+      "file_identifier_hash": "ff48df24fbfcd4fa621adc370b89c72c18243f84",
+      "file_hash": "c237f457f8a06c47954457366b89372b7be6d9bb",
+      "file_path": "works.md",
+      "old_path": "works.md",
+      "new_path": "works.md",
+      "new_file": false,
+      "renamed_file": false,
+      "deleted_file": false,
+      "diff_refs": {
+        "base_sha": "3ba06876e99472d2958ee8b53f09578ddfc20ce8",
+        "start_sha": "3ba06876e99472d2958ee8b53f09578ddfc20ce8",
+        "head_sha": "e0de9d2dd42b60759c0e160ac87d89e8a92c35d3"
+      },
+      "stored_externally": null,
+      "external_storage": null,
+      "mode_changed": false,
+      "a_mode": "100644",
+      "b_mode": "100644",
+      "viewer": {
+        "name": "text",
+        "error": null,
+        "error_message": null,
+        "collapsed": null
+      },
+      "alternate_viewer": null,
+      "old_size": 22,
+      "new_size": 40,
+      "conflict_type": null,
+      "added_lines": 5,
+      "removed_lines": 2,
+      "load_collapsed_diff_url": "/theeunknowns/test/-/merge_requests/1/diff_for_path?file_identifier=works.md-false-false-false\u0026new_path=works.md\u0026old_path=works.md",
+      "view_path": "/theeunknowns/test/-/blob/e0de9d2dd42b60759c0e160ac87d89e8a92c35d3/works.md",
+      "replaced_view_path": null,
+      "context_lines_path": "/theeunknowns/test/-/blob/e0de9d2dd42b60759c0e160ac87d89e8a92c35d3/works.md/diff",
+      "highlighted_diff_lines": [
+        {
+          "line_code": "c237f457f8a06c47954457366b89372b7be6d9bb_1_1",
+          "type": null,
+          "old_line": 1,
+          "new_line": 1,
+          "text": " ",
+          "meta_data": null,
+          "rich_text": " \u003cspan id=\"LC1\" class=\"line\" lang=\"markdown\"\u003e\u003c/span\u003e\n",
+          "can_receive_suggestion": true
+        },
+        {
+          "line_code": "c237f457f8a06c47954457366b89372b7be6d9bb_2_2",
+          "type": "old",
+          "old_line": 2,
+          "new_line": null,
+          "text": "-that works",
+          "meta_data": null,
+          "rich_text": "-\u003cspan id=\"LC2\" class=\"line\" lang=\"markdown\"\u003ethat works\u003c/span\u003e\n",
+          "can_receive_suggestion": false
+        },
+        {
+          "line_code": "c237f457f8a06c47954457366b89372b7be6d9bb_3_2",
+          "type": "old",
+          "old_line": 3,
+          "new_line": null,
+          "text": "-and works",
+          "meta_data": null,
+          "rich_text": "-\u003cspan id=\"LC3\" class=\"line\" lang=\"markdown\"\u003eand works\u003c/span\u003e",
+          "can_receive_suggestion": false
+        },
+        {
+          "line_code": "c237f457f8a06c47954457366b89372b7be6d9bb_4_2",
+          "type": "new",
+          "old_line": null,
+          "new_line": 2,
+          "text": "+that works (add)",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC2\" class=\"line\" lang=\"markdown\"\u003ethat works (add)\u003c/span\u003e\n",
+          "can_receive_suggestion": true
+        },
+        {
+          "line_code": "c237f457f8a06c47954457366b89372b7be6d9bb_4_3",
+          "type": "new",
+          "old_line": null,
+          "new_line": 3,
+          "text": "+()remove",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC3\" class=\"line\" lang=\"markdown\"\u003e()remove\u003c/span\u003e\n",
+          "can_receive_suggestion": true
+        },
+        {
+          "line_code": "c237f457f8a06c47954457366b89372b7be6d9bb_4_4",
+          "type": "new",
+          "old_line": null,
+          "new_line": 4,
+          "text": "+",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC4\" class=\"line\" lang=\"markdown\"\u003e\u003c/span\u003e\n",
+          "can_receive_suggestion": true
+        },
+        {
+          "line_code": "c237f457f8a06c47954457366b89372b7be6d9bb_4_5",
+          "type": "new",
+          "old_line": null,
+          "new_line": 5,
+          "text": "+",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC5\" class=\"line\" lang=\"markdown\"\u003e\u003c/span\u003e\n",
+          "can_receive_suggestion": true
+        },
+        {
+          "line_code": "c237f457f8a06c47954457366b89372b7be6d9bb_4_6",
+          "type": "new",
+          "old_line": null,
+          "new_line": 6,
+          "text": "+added line",
+          "meta_data": null,
+          "rich_text": "+\u003cspan id=\"LC6\" class=\"line\" lang=\"markdown\"\u003eadded line\u003c/span\u003e",
+          "can_receive_suggestion": true
+        }
+      ],
+      "is_fully_expanded": true,
+      "code_navigation_path": null
+    }
+  ],
+  "pagination": {
+    "total_pages": 2
+  }
+}
