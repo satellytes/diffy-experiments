@@ -72,4 +72,5 @@ preparing deployment to heroku, installing heroku with brew
 and then follow the heroku with rails 6 guide (not 12 factor gem anymore) https://devcenter.heroku.com/articles/getting-started-with-rails6
 
 we need to switch to postgress for heroku, sqlite is not supported on their platform.
-there is a nice app for osx (https://postgresapp.com/)
+there is a nice app for osx (https://postgresapp.com/). The default credentials created are a database with the name of the local user
+with the same password. I changed the config/database.yml and rerun the migrations and the app was working very well on postgres. It's very possible that this could work as a mixed approach because we don't have very complex databases. Makes it easier for other people to start the project in any case.
