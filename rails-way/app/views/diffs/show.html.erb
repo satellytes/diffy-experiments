@@ -22,10 +22,13 @@
 <hr>
 <%= form_with model: [@diff, @new_comment] do |f| %>
   <div>
-    Author: <%= f.collection_select(:author_id, User.all, :id, :name, {prompt:true}) %>
+    Author: <%= f.collection_select(:author_id, User.all, :id, :name, {prompt:false}) %>
   </div>
   <div>
     Body: <%= f.text_area :body %>
+  </div>
+  <div>
+    Hunk: <%= f.select(:hunk,  options_for_select(@diff.hunks)) %>
   </div>
   <div>
     Line: <%= f.text_field :line %>
@@ -43,6 +46,7 @@
 <% @diff.comments.each do |comment| %>
   <div class="comment">
     <h3><%= comment.author.name %></h3>
+    <span>Hunk <%= comment.hunk %></span>
     <p>Position <%= comment.line %> (<%= comment.side %>)</p>
     <p><%= comment.body %></p>
 

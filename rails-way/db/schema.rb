@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_05_064702) do
+ActiveRecord::Schema.define(version: 2021_10_06_062816) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_10_05_064702) do
     t.string "line"
     t.integer "side", default: 0
     t.integer "author_id", null: false
+    t.string "hunk", default: "", null: false
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["diff_id"], name: "index_comments_on_diff_id"
   end

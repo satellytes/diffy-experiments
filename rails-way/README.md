@@ -66,3 +66,10 @@ it's like being back at zero after the great success with vue. Maybe it's fine t
 I think this is the best for the first step: Store plain diffs plus users & comments. No other parsing artefacts. The rest should happen in the frontend which should send comment + metadata (lines etc, hunk header?). We can then slightly refactor to have a more atomic structure of diffs > hunks > lines so comments can refer to the lines more easily. but that's sounds like the future right now.
 
 good to know: `alt + p` toggles the performance badge in the output. 
+
+
+preparing deployment to heroku, installing heroku with brew
+and then follow the heroku with rails 6 guide (not 12 factor gem anymore) https://devcenter.heroku.com/articles/getting-started-with-rails6
+
+we need to switch to postgress for heroku, sqlite is not supported on their platform.
+there is a nice app for osx (https://postgresapp.com/)
