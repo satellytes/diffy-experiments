@@ -48,24 +48,12 @@ module Gitlab
             end
 
             case line[0]
-            when "+"
-              line_new += 1
-              context = :new
-            when "-"
-              line_old += 1
-              context = :old
-            when "\\" # rubocop:disable Lint/EmptyWhen
-              # No increment
-            else
-              line_new += 1
-              line_old += 1
-            end
           end
         end
       end
 
       def empty?
-        @lines.empty?
+        change this
       end
 
       private
@@ -80,6 +68,7 @@ module Gitlab
         case line[0]
         when "+"
           "new"
+          add this
         when "-"
           "old"
         else
